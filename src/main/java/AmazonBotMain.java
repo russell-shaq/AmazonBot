@@ -17,19 +17,7 @@ public class AmazonBotMain {
     public static void main(String[] args) {
         System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
-        driver.get("https://docs.google.com/document/d/1vDoZgieCwuSP0sWxBsdIQWqon_H7gLrmSuhySpjrbT0/edit");
         driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
-        WebElement yesOrNo = driver.findElement(By.cssSelector("#docs-title-widget > div"));
-        if(!yesOrNo.getText().equals("Yes"))
-        {
-            System.out.println("Protection activated");
-            try {
-                sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            driver.quit();
-        }
         driver.get("https://primenow.amazon.com/home");
         driver.manage().window().setSize(new Dimension(1920, 1080));
         driver.manage().window().maximize();
