@@ -16,7 +16,7 @@ public class AmazonBotMain {
 
     public static void main(String[] args) {
         System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
-        WebDriver driver = new FirefoxDriver();
+        
         driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
         driver.get("https://primenow.amazon.com/home");
         driver.manage().window().setSize(new Dimension(1920, 1080));
